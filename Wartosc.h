@@ -6,10 +6,14 @@
 
 class Wartosc 
 {
-private:
-    double wartosc;
-    Status_wartosci status;
-    Stempel_czasowy stempel_czasowy;
+    private:
+        double wartosc;
+        Status_wartosci status;
+        Stempel_czasowy stempel_czasowy;
+    public:
+        double pobierz_liczbe() {return wartosc;}
+
+        void ustaw_liczbe(double nowa_liczba) {wartosc = nowa_liczba;}
 };
 
 #endif

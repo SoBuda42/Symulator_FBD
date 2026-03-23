@@ -2,7 +2,7 @@
 #define KONTENER_FBD_H
 
 #include <string>
-using namespace std;
+#include <vector>
 
 class Blok_funkcyjny;
 class Polaczenie;
@@ -11,9 +11,11 @@ class Kontener_FBD
 {
     private:
         int okres_probkowania;
+        std::vector<Blok_funkcyjny*> bloki;
+        std::vector<Polaczenie*> polaczenia;
     public:
         void dodaj_blok_funkcyjny(Blok_funkcyjny* blok);
-        Blok_funkcyjny* blok_funkcyjny(string nazwa);
+        Blok_funkcyjny* blok_funkcyjny(std::string nazwa);
         void dodaj_polaczenie(Polaczenie* polaczenie);
 };
 
