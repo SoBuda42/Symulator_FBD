@@ -1,9 +1,11 @@
 #include <iostream>
+#include "Konstruktor_FBD.h"
 
 using namespace std;
 
 int main() 
 {
-    cout << "Test kompilacji" << endl;
+    Konstruktor_FBD konfiguracja;
+    konfiguracja.konfiguruj();
     return 0;
 }

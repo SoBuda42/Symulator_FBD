@@ -15,6 +15,10 @@ class Blok_funkcyjny
         vector<Wyjscie*> wyjscia;
     public:
         virtual void przelicz();
+
+        void dodaj_wejscie(Wejscie* w);
+        void dodaj_wyjscie(Wyjscie* w);
+        
         Wejscie* wez_wejscie(int numer);
         Wyjscie* wez_wyjscie(int numer);
 };
