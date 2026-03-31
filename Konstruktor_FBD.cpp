@@ -14,8 +14,8 @@ using namespace std;
 
 void Konstruktor_FBD::konfiguruj() 
 {
-    Blok_stalej* stala = new Blok_stalej(5.0);
-    Blok_wzmocnienia* wzmocnienie = new Blok_wzmocnienia(2.0);
+    Blok_funkcyjny* stala = new Blok_stalej(5.0);
+    Blok_funkcyjny* wzmocnienie = new Blok_wzmocnienia(2.0);
 
     Wejscie* do_wzmocnienia = new Wejscie();
     Wyjscie* z_wzmocnienia = new Wyjscie();
