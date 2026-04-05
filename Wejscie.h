@@ -2,29 +2,34 @@
 #define WEJSCIE_H
 #include "Wartosc.h"
 
-class Polaczenie;
+#include "Interfejs_wejscia.h"
+class Interfejs_polaczenia;
 
 /**
  * @brief INPUT blokow
  */
-class Wejscie
+class Wejscie : public Interfejs_wejscia
 {
 private:
     int numer;
-    Polaczenie* podpiety_kabel = nullptr;
+    Interfejs_polaczenia* podpiety_kabel = nullptr;
 public:
+    /**
+    * @brief Konstruktor przypisujacy wartosc 0 do wejscia gdy urzytkownik nie poda numeru wejscia
+    */
+    Wejscie(int nr=0) : numer(nr) {}
 
     /**
     * @brief funkcja podaje wartosc
     * @return Zwraca obiekt Wartosc
     */
-    Wartosc odczytaj_wartosc(); 
+    Wartosc odczytaj_wartosc() override; 
 
     /**
     * @brief funkcja podlacza fizycznie kabel
     * @param kabel Wskaznik na kabel, ktory chcemy wpiac w gniazdo
     */
-    void polacz(Polaczenie* kabel); 
+    void polacz(Interfejs_polaczenia* kabel) override; 
 };
 
 #endif

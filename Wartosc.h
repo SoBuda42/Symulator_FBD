@@ -16,6 +16,16 @@ class Wartosc
         Stempel_czasowy stempel_czasowy;
     public:
         /**
+         * @brief Konstruktor domyslny. Zeruje wartosc na starcie.
+         */
+        Wartosc() : wartosc(0.0) {}
+
+        /**
+         * @brief Konstruktor ustawiajacy od razu konkretna liczbe.
+         */
+        Wartosc(double startowa_wartosc) : wartosc(startowa_wartosc) {}
+        
+        /**
          * @brief Pobiera aktualnie zapisana liczbe.
          * @return Zwraca wartosc liczbowa typu double.
          */
