@@ -14,10 +14,12 @@ void Blok_dodawania::przelicz()
         suma += wejscia[i]->odczytaj_wartosc().pobierz_liczbe(); 
     }
 
-    if(wyjscia.size() > 0)
-    {
-        Wartosc wynik;
-        wynik.ustaw_liczbe(suma);
-        wyjscia[0]->ustaw_wartosc(wynik);
-    }
+    // if(wyjscia.size() > 0)
+    // {
+    //     Wartosc wynik;
+    //     wynik.ustaw_liczbe(suma);
+    //     wyjscia[0]->ustaw_wartosc(wynik);
+    // }
 }
+
+void Blok_dodawania::inicjalizuj() {}

@@ -1,13 +1,13 @@
 #ifndef BLOK_WZMOCNIENIA_H
 #define BLOK_WZMOCNIENIA_H
 
-#include "Blok_funkcyjny.h"
+#include "Wlasciwy_blok_przetwarzania.h"
 
 /**
  * @brief Maszyna pelniaca role mnoznika sygnalu.
  * Pobiera prad z wejscia, mnozy przez ustalony wspolczynnik i wysyla na wyjscie.
  */
-class Blok_wzmocnienia : public Blok_funkcyjny
+class Blok_wzmocnienia : public Wlasciwy_blok_przetwarzania
 {
     private:
         double wspolczynnik;
@@ -22,6 +22,8 @@ class Blok_wzmocnienia : public Blok_funkcyjny
      * @brief Pobiera wartosc z wejscia, dokonuje mnozenia i ustawia wynik na wyjsciu.
      */
     void przelicz() override;
+
+    void inicjalizuj() override;
 };
 
 #endif

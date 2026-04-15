@@ -3,7 +3,11 @@
 #include "Wyjscie.h"
 #include "Wartosc.h"
 
-Blok_licznika::Blok_licznika() {stan_licznika=0;}
+Blok_licznika::Blok_licznika() 
+{
+    stan_licznika=0;
+    wyjscia.push_back(new Wyjscie());
+}
 
 void Blok_licznika::przelicz()
 {
@@ -13,6 +17,10 @@ void Blok_licznika::przelicz()
 
         Wartosc aktualna_wartosc;
         aktualna_wartosc.ustaw_liczbe(stan_licznika);
-        wyjscia[0]->ustaw_wartosc(aktualna_wartosc);
+
+        Wyjscie* gniazdo = dynamic_cast<Wyjscie*>(wyjscia[0]);
+        if(gniazdo!=nullptr) {gniazdo->ustaw_wartosc(aktualna_wartosc);}
     }
 }
+
+void Blok_licznika::inicjalizuj() {}

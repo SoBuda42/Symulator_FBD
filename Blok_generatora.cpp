@@ -19,7 +19,11 @@ void Blok_generatora::przelicz()
 
     Wartosc nowa_wartosc;
     nowa_wartosc.ustaw_liczbe(status);
-    wyjscia[0]->ustaw_wartosc(nowa_wartosc);
+    
+    Wyjscie* gniazdo = dynamic_cast<Wyjscie*>(wyjscia[0]);
+    if(gniazdo!=nullptr) {gniazdo->ustaw_wartosc(nowa_wartosc);}
 
     licznik_krokow++;
 }
+
+void Blok_generatora::inicjalizuj() {}

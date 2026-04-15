@@ -3,7 +3,11 @@
 #include "Wyjscie.h"
 #include "Wartosc.h"
 
-Blok_wzmocnienia::Blok_wzmocnienia(double w) {wspolczynnik = w;}
+Blok_wzmocnienia::Blok_wzmocnienia(double w) 
+{
+    wspolczynnik = w;
+    wyjscia.push_back(new Wyjscie());
+}
 
 void Blok_wzmocnienia::przelicz()
 {
@@ -14,6 +18,10 @@ void Blok_wzmocnienia::przelicz()
 
         Wartosc nowa_wartosc;
         nowa_wartosc.ustaw_liczbe(wzmocnienie);
-        wyjscia[0]->ustaw_wartosc(nowa_wartosc);
+        
+        Wyjscie* gniazdo = dynamic_cast<Wyjscie*>(wyjscia[0]);
+        if(gniazdo!=nullptr) {gniazdo->ustaw_wartosc(nowa_wartosc);}
     }
 }
+
+void Blok_wzmocnienia::inicjalizuj() {}

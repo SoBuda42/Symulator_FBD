@@ -7,7 +7,7 @@
 class Wejscie;
 class Wyjscie;
 class Polaczenie;
-class Blok_funkcyjny;
+class Podstawowy_blok_funkcyjny;
 
 class Kontener_FBD
 {
@@ -18,7 +18,7 @@ class Kontener_FBD
          * @brief Kontener przechowujacy adresy wszystkich utworzonych blokow w pamieci sterty.
          * Zapobiega wyciekom pamieci i usunieciu maszyn po zakonczeniu funkcji.
          */
-        std::vector<Blok_funkcyjny*> lista_funkcyjna;
+        std::vector<Podstawowy_blok_funkcyjny*> lista_funkcyjna;
 
         /**
          * @brief Kontener przechowujacy adresy wszystkich utworzonych blokow w pamieci sterty.
@@ -47,17 +47,57 @@ class Kontener_FBD
         /**
         * @brief Tworzy nowy adres w konterze Funkcyjnym dla stalej
         */
-        Blok_funkcyjny* stworz_stala(double wartosc);
+        Podstawowy_blok_funkcyjny* stworz_stala(double wartosc);
 
         /**
         * @brief Tworzy nowy adres w konterze Funkcyjnym dla wzmocnienia
         */
-        Blok_funkcyjny* stworz_wzmocnienie(double wartosc);
+        Podstawowy_blok_funkcyjny* stworz_wzmocnienie(double wartosc);
 
         /**
-        * @brief Tworzy nowy adres w konterze Funkcyjnym dla dodawania
+        * @brief Tworzy nowy adres w konterze Funkcyjnym dla dodawania i odejmowania
         */
-        Blok_funkcyjny* stworz_dodawanie();
+        Podstawowy_blok_funkcyjny* stworz_addsub(std::string znaki);
+
+        /**
+         * @brief Tworzy nowy adres w Kontenerze Funkcyjnym dla maszyny calkujacej.
+         * @return Wskaznik na utworzony obiekt.
+         */
+        Podstawowy_blok_funkcyjny* stworz_calkowanie();
+
+        /**
+         * @brief Tworzy nowy adres w Kontenerze Funkcyjnym dla maszyny mnozacej.
+         * @return Wskaznik na utworzony obiekt.
+         */
+        Podstawowy_blok_funkcyjny* stworz_mnozenie();
+
+        /**
+         * @brief Tworzy nowy adres w Kontenerze Funkcyjnym dla maszyny dzielacej.
+         * @return Wskaznik na utworzony obiekt.
+         */
+        Podstawowy_blok_funkcyjny* stworz_dzielenie();
+
+        /**
+         * @brief Tworzy nowy adres w Kontenerze Funkcyjnym dla maszyny zrzucajacej dane na dysk.
+         * @param nazwa_pliku Sciezka lub nazwa pliku docelowego (np. "wynik.csv").
+         * @return Wskaznik na utworzony obiekt.
+         */
+        Podstawowy_blok_funkcyjny* stworz_zapis(std::string nazwa_pliku);
+
+        /**
+         * @brief Tworzy nowy adres w Kontenerze Funkcyjnym dla maszyny czytajacej dane z dysku.
+         * @param nazwa_pliku Sciezka lub nazwa pliku zrodlowego z danymi.
+         * @return Wskaznik na utworzony obiekt.
+         */
+        Podstawowy_blok_funkcyjny* stworz_odczyt(std::string nazwa_pliku);
+
+        /**
+         * @brief Tworzy nowy adres w Kontenerze Funkcyjnym dla generatora sygnalu periodycznego.
+         * @param amp Maksymalna wartosc (amplituda) generowanego sygnalu.
+         * @param okr Okres sygnalu (liczba krokow na pelen cykl).
+         * @return Wskaznik na utworzony obiekt.
+         */
+        Podstawowy_blok_funkcyjny* stworz_generator(double amp, int okr);
 
         /**
         * @brief Tworzy nowy adres w konterze Wejsc

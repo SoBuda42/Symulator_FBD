@@ -1,5 +1,6 @@
 #include "Podstawowy_blok_funkcyjny.h"
 #include "Interfejs_wejscia.h"
+#include "Interfejs_wyjscia.h"
 
 Podstawowy_blok_funkcyjny::Podstawowy_blok_funkcyjny() {}
 

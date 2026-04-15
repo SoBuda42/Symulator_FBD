@@ -3,6 +3,8 @@
 #include "Wyjscie.h"
 #include "Wartosc.h"
 
+Blok_dzielenia::Blok_dzielenia() {wyjscia.push_back(new Wyjscie());}
+
 void Blok_dzielenia::przelicz() 
 {
     if (wejscia.size()==0) return;
@@ -20,6 +22,10 @@ void Blok_dzielenia::przelicz()
     {
         Wartosc wynik;
         wynik.ustaw_liczbe(iloraz);
-        wyjscia[0]->ustaw_wartosc(wynik);
+        
+        Wyjscie* gniazdo = dynamic_cast<Wyjscie*>(wyjscia[0]);
+        if(gniazdo!=nullptr) {gniazdo->ustaw_wartosc(wynik);}
     }
 }
+
+void Blok_dzielenia::inicjalizuj() {}

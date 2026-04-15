@@ -1,13 +1,13 @@
 #ifndef BLOK_STALEJ_H
 #define BLOK_STALEJ_H
 
-#include "Blok_funkcyjny.h"
+#include "Generator_sygnalu.h"
 
 /**
  * @brief Maszyna pelniaca role zasilacza (zrodla sygnalu).
  * Generuje zadeklarowana, stala wartosc pradu na swoim wyjsciu.
  */
-class Blok_stalej : public Blok_funkcyjny
+class Blok_stalej : public Generator_sygnalu
 {
     private:
         double ukryta_wartosc;
@@ -22,6 +22,11 @@ class Blok_stalej : public Blok_funkcyjny
          * @brief Wysyla zapisana stala wartosc bezposrednio do swojego gniazda wyjsciowego.
          */
         void przelicz() override;
+
+        /**
+         * @brief Funkcja przygotowujaca maszyne do pracy (obecnie pusta).
+         */
+        void inicjalizuj() override;
 };
 
 #endif

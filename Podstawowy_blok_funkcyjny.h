@@ -28,6 +28,9 @@ class Podstawowy_blok_funkcyjny : public Interfejs_bloku_funkcyjnego
          */
         Podstawowy_blok_funkcyjny();
 
+        void dodaj_wejscie(Interfejs_wejscia* w) { wejscia.push_back(w); }
+        void dodaj_wyjscie(Interfejs_wyjscia* w) { wyjscia.push_back(w); }
+
         /**
          * @brief Wirtualny destruktor.
          * * Gwarantuje poprawne zniszczenie wszystkich fizycznych gniazd, ktore byly
