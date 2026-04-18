@@ -4,7 +4,7 @@
 #include "Wartosc.h"
 #include "Interfejs_polaczenia.h"
 class Interfejs_wyjscie;
-class Wejscie;
+class Interfejs_wejscia;
 
 /**
  * @brief Przewod laczacy gniazdo wyjsciowe jednego bloku z gniazdem wejsciowym drugiego.

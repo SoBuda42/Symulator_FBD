@@ -5,8 +5,8 @@
 
 using namespace std;
 
-class Wejscie;
-class Wyjscie;
+class Interfejs_wejscia;
+class Interfejs_wyjscia;
 
 /**
  * @brief Abstrakcyjna klasa bazowa dla wszystkich maszyn w symulatorze.
@@ -15,8 +15,8 @@ class Wyjscie;
 class Blok_funkcyjny
 {
     protected:
-        vector<Wejscie*> wejscia;
-        vector<Wyjscie*> wyjscia;
+        vector<Interfejs_wejscia*> wejscia;
+        vector<Interfejs_wyjscia*> wyjscia;
     public:
         /**
          * @brief Glowna funkcja obliczeniowa maszyny. 
@@ -28,27 +28,27 @@ class Blok_funkcyjny
          * @brief Podlacza nowe gniazdo wejsciowe do obudowy bloku.
          * @param w Wskaznik na gotowe gniazdo wejsciowe.
          */
-        void dodaj_wejscie(Wejscie* w);
+        void dodaj_wejscie(Interfejs_wejscia* w);
 
         /**
          * @brief Podlacza nowe gniazdo wyjsciowe do obudowy bloku.
          * @param w Wskaznik na gotowe gniazdo wyjsciowe.
          */
-        void dodaj_wyjscie(Wyjscie* w);
+        void dodaj_wyjscie(Interfejs_wyjscia* w);
         
         /**
          * @brief Zwraca wskaznik do konkretnego gniazda wejsciowego maszyny.
          * @param numer Numer gniazda (najczesciej 0).
          * @return Wskaznik na zadane gniazdo wejsciowe.
          */
-        Wejscie* wez_wejscie(int numer);
+        Interfejs_wejscia* wez_wejscie(int numer);
 
         /**
          * @brief Zwraca wskaznik do konkretnego gniazda wyjsciowego maszyny.
          * @param numer Numer gniazda (najczesciej 0).
          * @return Wskaznik na zadane gniazdo wyjsciowe.
          */
-        Wyjscie* wez_wyjscie(int numer);
+        Interfejs_wyjscia* wez_wyjscie(int numer);
 };
 
 #endif

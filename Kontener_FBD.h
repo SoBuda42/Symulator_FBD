@@ -4,9 +4,9 @@
 #include <string>
 #include <vector>
 
-class Wejscie;
-class Wyjscie;
-class Polaczenie;
+class Interfejs_wejscia;
+class Interfejs_wyjscia;
+class Interfejs_polaczenia;
 class Podstawowy_blok_funkcyjny;
 
 class Kontener_FBD
@@ -24,19 +24,19 @@ class Kontener_FBD
          * @brief Kontener przechowujacy adresy wszystkich utworzonych blokow w pamieci sterty.
          * Zapobiega wyciekom pamieci i usunieciu maszyn po zakonczeniu funkcji.
          */
-        std::vector<Wejscie*> lista_wejsc;
+        std::vector<Interfejs_wejscia*> lista_wejsc;
 
         /**
          * @brief Kontener przechowujacy adresy wszystkich utworzonych blokow w pamieci sterty.
          * Zapobiega wyciekom pamieci i usunieciu maszyn po zakonczeniu funkcji.
          */
-        std::vector<Wyjscie*> lista_wyjsc;
+        std::vector<Interfejs_wyjscia*> lista_wyjsc;
 
         /**
          * @brief Kontener przechowujacy adresy wszystkich utworzonych blokow w pamieci sterty.
          * Zapobiega wyciekom pamieci i usunieciu maszyn po zakonczeniu funkcji.
          */
-        std::vector<Polaczenie*> lista_polaczen;
+        std::vector<Interfejs_polaczenia*> lista_polaczen;
     public:
         /**
          * @brief Destruktor klasy czyszczacy fabryke.
@@ -102,17 +102,17 @@ class Kontener_FBD
         /**
         * @brief Tworzy nowy adres w konterze Wejsc
         */
-        Wejscie* stworz_wejscie();
+        Interfejs_wejscia* stworz_wejscie();
 
         /**
         * @brief Tworzy nowy adres w konterze Wyjsc
         */
-        Wyjscie* stworz_wyjscie();
+        Interfejs_wyjscia* stworz_wyjscie();
 
         /**
         * @brief Tworzy nowy adres w konterze Polaczen
         */
-        Polaczenie* stworz_polaczenie();
+        Interfejs_polaczenia* stworz_polaczenie();
 };
 
 #endif

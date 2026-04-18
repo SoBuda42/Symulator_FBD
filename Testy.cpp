@@ -18,7 +18,7 @@ void Testy::test_wzmocnienia(Kontener_FBD* kontener)
 
     wzmocnienie->dodaj_wejscie(kontener->stworz_wejscie());
 
-    Polaczenie* polaczenie = kontener->stworz_polaczenie();
+    Interfejs_polaczenia* polaczenie = kontener->stworz_polaczenie();
     polaczenie->polacz_z(stala->wez_wyjscie(0));
     polaczenie->polacz_do(wzmocnienie->wez_wejscie(0));
     wzmocnienie->wez_wejscie(0)->polacz(polaczenie);

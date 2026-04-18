@@ -10,7 +10,7 @@ enum Status_symulacji
 enum Status_wartosci
 {
     ok,
-    bad
+    zly
 };
 
 #endif

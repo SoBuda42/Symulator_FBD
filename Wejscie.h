@@ -1,7 +1,7 @@
 #ifndef WEJSCIE_H
 #define WEJSCIE_H
-#include "Wartosc.h"
 
+#include "Wartosc.h"
 #include "Interfejs_wejscia.h"
 class Interfejs_polaczenia;
 

@@ -7,6 +7,8 @@ Blok_addsub::Blok_addsub(std::string znaki)
 {
     znaki_operacji = znaki;
     wyjscia.push_back(new Wyjscie());
+
+    for(int i=0; i<znaki.size(); i++) {wejscia.push_back(new Wejscie());}
 }
 
 void Blok_addsub::inicjalizuj() {}

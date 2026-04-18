@@ -6,6 +6,7 @@
 Blok_calkowania::Blok_calkowania()
 {
     suma_calkowita = 0.0;
+    wejscia.push_back(new Wejscie());
     wyjscia.push_back(new Wyjscie());
 }
 

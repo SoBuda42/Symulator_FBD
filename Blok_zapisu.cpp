@@ -1,7 +1,6 @@
 #include "Blok_zapisu.h"
 #include "Wejscie.h"
 #include "Wartosc.h"
-
 #include <fstream>
 
 using namespace std;
@@ -10,6 +9,8 @@ Blok_zapisu::Blok_zapisu(string nazwa_p)
 {
     nazwa_pliku=nazwa_p;
     plik.open(nazwa_pliku);
+
+    wejscia.push_back(new Wejscie());
 }
 
 Blok_zapisu::~Blok_zapisu() {if(plik.is_open()) {plik.close();}}

@@ -6,6 +6,7 @@
 Blok_wzmocnienia::Blok_wzmocnienia(double w) 
 {
     wspolczynnik = w;
+    wejscia.push_back(new Wejscie());
     wyjscia.push_back(new Wyjscie());
 }
 

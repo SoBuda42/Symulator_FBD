@@ -19,6 +19,8 @@ void Blok_odejmowania::przelicz()
     {
         Wartosc wynik;
         wynik.ustaw_liczbe(roznica);
-        wyjscia[0]->ustaw_wartosc(wynik);
+        
+        Wyjscie* gniazdo = dynamic_cast<Wyjscie*>(wyjscia[0]);
+        if(gniazdo!=nullptr) {gniazdo->ustaw_wartosc(wynik);}
     }
 }

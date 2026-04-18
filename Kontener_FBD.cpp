@@ -102,23 +102,23 @@ Podstawowy_blok_funkcyjny* Kontener_FBD::stworz_generator(double amp, int okr)
     return blok;
 }
 
-Wejscie* Kontener_FBD::stworz_wejscie()
+Interfejs_wejscia* Kontener_FBD::stworz_wejscie()
 {
-    Wejscie* w = new Wejscie();
+    Interfejs_wejscia* w = new Wejscie();
     lista_wejsc.push_back(w);
     return w;
 }
 
-Wyjscie* Kontener_FBD::stworz_wyjscie()
+Interfejs_wyjscia* Kontener_FBD::stworz_wyjscie()
 {
-    Wyjscie* w = new Wyjscie();
+    Interfejs_wyjscia* w = new Wyjscie();
     lista_wyjsc.push_back(w);
     return w;
 }
 
-Polaczenie* Kontener_FBD::stworz_polaczenie()
+Interfejs_polaczenia* Kontener_FBD::stworz_polaczenie()
 {
-    Polaczenie* w = new Polaczenie();
+    Interfejs_polaczenia* w = new Polaczenie();
     lista_polaczen.push_back(w);
     return w;
 }
