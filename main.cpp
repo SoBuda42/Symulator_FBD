@@ -1,20 +1,17 @@
-#include <iostream>
-#include "Kontener_FBD.h"
-#include "Testy.h"
+#include <QApplication>
+#include "Okno_glowne.h"
 
-using namespace std;
-
-int main()
+int main(int argc, char *argv[])
 {
-    Kontener_FBD kontener_obiektow;
-    Testy tester;
-
-    cout << "\nTest wzmocnienia:" << endl;
-    tester.test_wzmocnienia(&kontener_obiektow);
-
-    cout<<"\nTest dodawania:"<<endl;
-    tester.test_dodawania(&kontener_obiektow);
-    cout<<endl;
-
-    return 0;
+    // Odpalamy system operacyjny okienek
+    QApplication aplikacja(argc, argv);
+    
+    // Tworzymy nasze zespawane okno
+    Okno_glowne okno;
+    
+    // Wysuwamy okno na wierzch
+    okno.show();
+    
+    // Nieskończona pętla nasłuchująca (zasilanie)
+    return aplikacja.exec();
 }

@@ -6,7 +6,8 @@
 
 using namespace std;
 
-void Konstruktor_FBD::polacz_maszyny(Podstawowy_blok_funkcyjny* odkad, int wyj, Podstawowy_blok_funkcyjny* dokad, int wej)
+void Konstruktor_FBD::polacz_maszyny(Podstawowy_blok_funkcyjny* odkad, int wyj,
+     Podstawowy_blok_funkcyjny* dokad, int wej)
 {
     Interfejs_polaczenia* kabel = kontener->stworz_polaczenie();
     kabel->polacz_z(odkad->wez_wyjscie(wyj));
@@ -16,14 +17,15 @@ void Konstruktor_FBD::polacz_maszyny(Podstawowy_blok_funkcyjny* odkad, int wyj, 
 
 Konstruktor_FBD::Konstruktor_FBD(Kontener_FBD* ktory_kontener) {kontener = ktory_kontener;}
 
-void Konstruktor_FBD::konfiguruj(string nazwa_pliku_odczyt, string nazwa_pliku_zapis) 
+void Konstruktor_FBD::konfiguruj(string nazwa_pliku_odczyt, string nazwa_pliku_zapis, double wartosc_stalej,
+     double wartosc_amplitudy, int wartosc_okresu, string znaki_addsub, double wartosc_wzmocnienia) 
 {
     Podstawowy_blok_funkcyjny* odczyt = kontener->stworz_odczyt(nazwa_pliku_odczyt);
-    Podstawowy_blok_funkcyjny* generator = kontener->stworz_generator(5.0, 20);
-    Podstawowy_blok_funkcyjny* stala = kontener->stworz_stala(1.0);
-    Podstawowy_blok_funkcyjny* addsub = kontener->stworz_addsub("-+++");
+    Podstawowy_blok_funkcyjny* generator = kontener->stworz_generator(wartosc_amplitudy, wartosc_okresu);
+    Podstawowy_blok_funkcyjny* stala = kontener->stworz_stala(wartosc_stalej);
+    Podstawowy_blok_funkcyjny* addsub = kontener->stworz_addsub(znaki_addsub);
     Podstawowy_blok_funkcyjny* calkowanie = kontener->stworz_calkowanie();
-    Podstawowy_blok_funkcyjny* wzmocnienie = kontener->stworz_wzmocnienie(0.1);
+    Podstawowy_blok_funkcyjny* wzmocnienie = kontener->stworz_wzmocnienie(wartosc_wzmocnienia);
     Podstawowy_blok_funkcyjny* zapis = kontener->stworz_zapis(nazwa_pliku_zapis);
 
     polacz_maszyny(odczyt, 0, addsub, 0);

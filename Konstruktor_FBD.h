@@ -45,7 +45,8 @@ class Konstruktor_FBD
          * * @param nazwa_pliku_odczyt Sciezka do pliku zrodlowego dla Bloku Odczytu.
          * @param nazwa_pliku_zapis Sciezka docelowa dla wynikowego Bloku Zapisu.
          */
-        void konfiguruj(std::string nazwa_pliku_odczyt, std::string nazwa_pliku_zapis);
+        void konfiguruj(std::string nazwa_pliku_odczyt, std::string nazwa_pliku_zapis, double wartosc_stalej,
+             double wartosc_amplitudy, int wartosc_okresu, std::string znaki_addsub, double wartosc_wzmocnienia);
 };
 
 #endif

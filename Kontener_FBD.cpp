@@ -85,6 +85,7 @@ Podstawowy_blok_funkcyjny* Kontener_FBD::stworz_zapis(std::string nazwa_pliku)
 {
     Podstawowy_blok_funkcyjny* blok = new Blok_zapisu(nazwa_pliku);
     lista_funkcyjna.push_back(blok);
+    lista_wyjsc.push_back((Interfejs_wyjscia*)blok);
     return blok;
 }
 
@@ -92,6 +93,7 @@ Podstawowy_blok_funkcyjny* Kontener_FBD::stworz_odczyt(std::string nazwa_pliku)
 {
     Podstawowy_blok_funkcyjny* blok = new Blok_odczytu(nazwa_pliku);
     lista_funkcyjna.push_back(blok);
+    lista_wejsc.push_back((Interfejs_wejscia*)blok);
     return blok;
 }
 
@@ -116,9 +118,29 @@ Interfejs_wyjscia* Kontener_FBD::stworz_wyjscie()
     return w;
 }
 
+Interfejs_wyjscia* Kontener_FBD::pobierz_ostatnie_wyjscie()
+{
+    if(!lista_wyjsc.empty()) return lista_wyjsc.back();
+    return nullptr;
+}
+
 Interfejs_polaczenia* Kontener_FBD::stworz_polaczenie()
 {
     Interfejs_polaczenia* w = new Polaczenie();
     lista_polaczen.push_back(w);
     return w;
+}
+
+Podstawowy_blok_funkcyjny* Kontener_FBD::wez_blok(int numer_bloku)
+{
+    if(numer_bloku >= 0 && numer_bloku <lista_funkcyjna.size()) return lista_funkcyjna[numer_bloku];
+    return nullptr;
+}
+
+void Kontener_FBD::przelicz_wszystkie_bloki()
+{
+    for(auto blok : lista_funkcyjna)
+    {
+        if(blok != nullptr) blok->przelicz();
+    }
 }

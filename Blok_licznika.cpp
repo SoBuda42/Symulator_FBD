@@ -3,8 +3,9 @@
 #include "Wyjscie.h"
 #include "Wartosc.h"
 
-Blok_licznika::Blok_licznika() 
+Blok_licznika::Blok_licznika(double lim) 
 {
+    limit = lim;
     stan_licznika=0;
     wyjscia.push_back(new Wyjscie());
 }
@@ -14,6 +15,8 @@ void Blok_licznika::przelicz()
     if(wejscia.size()>0 && wyjscia.size()>0)
     {
         if(wejscia[0]->odczytaj_wartosc().pobierz_liczbe() > 0.0) stan_licznika++;
+
+        if(stan_licznika > limit) stan_licznika = limit;
 
         Wartosc aktualna_wartosc;
         aktualna_wartosc.ustaw_liczbe(stan_licznika);

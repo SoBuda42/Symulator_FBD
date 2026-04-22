@@ -109,10 +109,23 @@ class Kontener_FBD
         */
         Interfejs_wyjscia* stworz_wyjscie();
 
+        Interfejs_wyjscia* pobierz_ostatnie_wyjscie();
+
         /**
         * @brief Tworzy nowy adres w konterze Polaczen
         */
         Interfejs_polaczenia* stworz_polaczenie();
+
+        /**
+         * @brief Pozwala sterowni (Qt) odnaleźć konkretną maszynę na hali.
+         */
+        Podstawowy_blok_funkcyjny* wez_blok(int numer_bloku);
+
+        /**
+         * @brief Główny impuls dla całej hali. 
+         * Przechodzi przez wszystkie bloki i wywołuje ich obliczenia.
+         */
+        void przelicz_wszystkie_bloki();
 };
 
 #endif
