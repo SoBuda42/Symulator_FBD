@@ -46,6 +46,7 @@ Okno_glowne::Okno_glowne(QWidget *parent) : QMainWindow(parent)
     uklad_pionowy->addWidget(pole_wartosci_stalej);
 
     pole_znaki_addsub = new QLineEdit("-+++", this);
+    pole_znaki_addsub->setMaxLength(4);
     uklad_pionowy->addWidget(new QLabel("Kolejnosc znakow AddSub:"));
     uklad_pionowy->addWidget(pole_znaki_addsub);
 
@@ -110,6 +111,11 @@ void Okno_glowne::kliknieto_buduj()
     int okres = pole_okres_gen->value();
     double stala = pole_wartosci_stalej->value();
     QString znaki_addsub = pole_znaki_addsub->text();
+    if(znaki_addsub.size() != 4)
+    {
+        konsola_logow->append(">> BLAD KRYTYCZNY: Pole AddSub musi miec DOKLADNIE 4 znaki (np. -+++)!");
+        return;
+    }
     double wzmocnienie = pole_wzmocnienie->value();
 
     konsola_logow->append(">> Rozpoczynam budowe. Plik odczytu: " + wej + ", Plik zapisu: " + wyj +

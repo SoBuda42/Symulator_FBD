@@ -2,9 +2,9 @@
 
 Blok_generatora::Blok_generatora(double amp, int okr)
 {
+    licznik_krokow = 0;
     amplituda = amp;
     okres = okr;
-    licznik_krokow = 0;
 
     wyjscia.push_back(new Wyjscie());
 }
@@ -12,7 +12,7 @@ Blok_generatora::Blok_generatora(double amp, int okr)
 void Blok_generatora::przelicz()
 {
     int ktory_krok = licznik_krokow % okres;
-    double status;
+    double status = 0.0;
 
     if(ktory_krok<okres/2.0) {status=amplituda;}
     else {status=0.0;}

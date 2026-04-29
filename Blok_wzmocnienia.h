@@ -10,7 +10,7 @@
 class Blok_wzmocnienia : public Wlasciwy_blok_przetwarzania
 {
     private:
-        double wspolczynnik;
+        double wspolczynnik = 0;
     public:
     /**
      * @brief Konstruktor ustawiajacy sile wzmocnienia.

@@ -3,6 +3,7 @@
 
 enum Status_symulacji
 {
+    stop,
     uruchomiona,
     wstrzymana
 };

@@ -13,8 +13,8 @@ class Interfejs_wejscia;
 class Polaczenie : public Interfejs_polaczenia
 {
 private:
-    Interfejs_wyjscia* z_wyjscia; 
-    Interfejs_wejscia* do_wejscia;
+    Interfejs_wyjscia* z_wyjscia = nullptr; 
+    Interfejs_wejscia* do_wejscia = nullptr;
 public:
     /**
     * @brief Poczatkowo przypisuje do kabla wartosc 0 bo kabel nie jest do niczego podlaczony

@@ -11,7 +11,7 @@ class Interfejs_polaczenia;
 class Wejscie : public Interfejs_wejscia
 {
 private:
-    int numer;
+    int numer = 0;
     Interfejs_polaczenia* podpiety_kabel = nullptr;
 public:
     /**

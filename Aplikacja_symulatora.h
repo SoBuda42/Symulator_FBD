@@ -38,15 +38,18 @@ class Aplikacja_symulatora : public QObject
     private:
         QTimer *zegar_systemowy;  ///< Zegar odmierzający interwały czasowe pomiędzy krokami symulacji
 
-        Kontener_FBD *kontener;
-        Konstruktor_FBD *robot_montazowy;
+        Kontener_FBD *kontener = nullptr;
+        Konstruktor_FBD *robot_montazowy = nullptr;
 
         int aktualny_blok = 0;
+        int limit_krokow_odczytu = 0;
+        int aktualny_krok_odczytu = 0;
+        
     public slots:
         void zmien_zasilanie(double nowa_wartosc);
         void zmien_aktualny_blok(int ktory_blok);
         void wartosci_poczatkowe_fabryki(QString plik_wej, QString plik_wyj, double wartosc_stalej,
-             double wartosc_amplitudy, int wartosc_okresu, QString znaki_addsub, double wartosc_wzmocnienia);
+        double wartosc_amplitudy, int wartosc_okresu, QString znaki_addsub, double wartosc_wzmocnienia);
 
     private slots:
         /**

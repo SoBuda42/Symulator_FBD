@@ -18,25 +18,8 @@ using namespace std;
 
 Kontener_FBD::~Kontener_FBD()
 {
-    for(int i=0; i<lista_funkcyjna.size(); i++)
-    {
-        delete lista_funkcyjna[i];
-    }
-
-    for(int i=0; i<lista_wejsc.size(); i++)
-    {
-        delete lista_wejsc[i];
-    }
-
-    for(int i=0; i<lista_wyjsc.size(); i++)
-    {
-        delete lista_wyjsc[i];
-    }
-
-    for(int i=0; i<lista_polaczen.size(); i++)
-    {
-        delete lista_polaczen[i];
-    }
+    for(int i=0; i<lista_polaczen.size(); i++) {delete lista_polaczen[i];}
+    for(int i=0; i<lista_funkcyjna.size(); i++) {delete lista_funkcyjna[i];}
 }
 
 Podstawowy_blok_funkcyjny* Kontener_FBD::stworz_stala(double wartosc)
@@ -85,7 +68,7 @@ Podstawowy_blok_funkcyjny* Kontener_FBD::stworz_zapis(std::string nazwa_pliku)
 {
     Podstawowy_blok_funkcyjny* blok = new Blok_zapisu(nazwa_pliku);
     lista_funkcyjna.push_back(blok);
-    lista_wyjsc.push_back((Interfejs_wyjscia*)blok);
+    lista_wyjsc.push_back(blok->wez_wyjscie(0));
     return blok;
 }
 
@@ -93,7 +76,6 @@ Podstawowy_blok_funkcyjny* Kontener_FBD::stworz_odczyt(std::string nazwa_pliku)
 {
     Podstawowy_blok_funkcyjny* blok = new Blok_odczytu(nazwa_pliku);
     lista_funkcyjna.push_back(blok);
-    lista_wejsc.push_back((Interfejs_wejscia*)blok);
     return blok;
 }
 

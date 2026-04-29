@@ -11,31 +11,31 @@
 class Wartosc 
 {
     private:
-        double wartosc;
+        double wartosc = 0.0;
         Status_wartosci status;
         Stempel_czasowy stempel_czasowy;
     public:
         /**
          * @brief Konstruktor domyslny. Zeruje wartosc na starcie.
          */
-        Wartosc() : wartosc(0.0) {}
+        Wartosc();
 
         /**
          * @brief Konstruktor ustawiajacy od razu konkretna liczbe.
          */
-        Wartosc(double startowa_wartosc) : wartosc(startowa_wartosc) {}
+        Wartosc(double startowa_wartosc);
         
         /**
          * @brief Pobiera aktualnie zapisana liczbe.
          * @return Zwraca wartosc liczbowa typu double.
          */
-        double pobierz_liczbe() {return wartosc;}
+        double pobierz_liczbe();
 
         /**
          * @brief Ustawia nowa liczbe w obiekcie.
          * @param nowa_liczba Wartosc typu double do zapisania w obiekcie.
          */
-        void ustaw_liczbe(double nowa_liczba) {wartosc = nowa_liczba;}
+        void ustaw_liczbe(double nowa_liczba);
 };
 
 #endif

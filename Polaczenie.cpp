@@ -8,5 +8,5 @@ void Polaczenie::polacz_do(Interfejs_wejscia* w) {do_wejscia = w;}
 Wartosc Polaczenie::odczytaj_wartosc() 
 {
     if(z_wyjscia==nullptr) {return Wartosc(0.0);}
-    else {return z_wyjscia->pobierz_wartosc();}
+    return z_wyjscia->pobierz_wartosc();
 }

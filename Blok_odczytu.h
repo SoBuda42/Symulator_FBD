@@ -22,7 +22,9 @@ class Blok_odczytu : public Generator_sygnalu
          * @param nazwa_p Dokladna sciezka lub nazwa pliku (np. "dane.txt"), z ktorego 
          * maszyna bedzie czerpac wartosci.
          */
-        Blok_odczytu(std::string nazwa_p);        
+        Blok_odczytu(std::string nazwa_p);     
+        
+        ~Blok_odczytu();
 
         /**
          * @brief Funkcja robocza maszyny. Odczytuje kolejna liczbe z pliku 

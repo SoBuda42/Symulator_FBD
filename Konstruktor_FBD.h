@@ -38,6 +38,8 @@ class Konstruktor_FBD
          */
         Konstruktor_FBD(Kontener_FBD* ktory_kontener);
 
+        ~Konstruktor_FBD();
+
         /**
          * @brief Glowna procedura budowlana. Tworzy i konfiguruje pelen uklad FBD
          * wedlug sztywno zapisanego schematu. Zleca Kontenerowi produkcje maszyn,

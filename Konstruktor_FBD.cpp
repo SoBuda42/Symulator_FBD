@@ -17,6 +17,8 @@ void Konstruktor_FBD::polacz_maszyny(Podstawowy_blok_funkcyjny* odkad, int wyj,
 
 Konstruktor_FBD::Konstruktor_FBD(Kontener_FBD* ktory_kontener) {kontener = ktory_kontener;}
 
+Konstruktor_FBD::~Konstruktor_FBD() {}
+
 void Konstruktor_FBD::konfiguruj(string nazwa_pliku_odczyt, string nazwa_pliku_zapis, double wartosc_stalej,
      double wartosc_amplitudy, int wartosc_okresu, string znaki_addsub, double wartosc_wzmocnienia) 
 {

@@ -10,7 +10,7 @@
 class Blok_stalej : public Generator_sygnalu
 {
     private:
-        double ukryta_wartosc;
+        double ukryta_wartosc = 0;
     public:
         /**
          * @brief Konstruktor ustawiajacy poczatkowa wartosc zasilacza.

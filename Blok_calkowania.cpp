@@ -10,7 +10,7 @@ Blok_calkowania::Blok_calkowania()
     wyjscia.push_back(new Wyjscie());
 }
 
-void Blok_calkowania::inicjalizuj() {suma_calkowita = 0.0;}
+void Blok_calkowania::inicjalizuj() {}
 
 void Blok_calkowania::przelicz() 
 {

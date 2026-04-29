@@ -17,7 +17,7 @@ class Wyjscie : public Interfejs_wyjscia
         /**
         * @brief Kostruktor przypisujacy do wyjscia 0, gdy urzytkownik zapomni podac numeru wyjscia
         */
-        Wyjscie(int nr=0) : numer(nr) {}
+        Wyjscie(int nr=0) : numer(nr) {wartosc.ustaw_liczbe(0.0);}
         
         /**
          * @brief Odczytuje wartosc aktualnie znajdujaca sie na wyjsciu.
